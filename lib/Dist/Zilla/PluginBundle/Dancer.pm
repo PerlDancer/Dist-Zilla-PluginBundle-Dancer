@@ -40,6 +40,10 @@ I<skip> option for L<Dist::Zilla::Plugin::Test::Compile>.
 
 I<skip> option for L<Dist::Zilla::Plugin::AutoPrereqs>.
 
+=head3 include_dotfiles
+
+For L<Dist::Zilla::Plugin::GatherDir>. Defaults to I<1>.
+
 =cut
 
 use strict;
@@ -73,7 +77,10 @@ sub configure {
     my $arg = $self->payload;
 
     $self->add_plugins(
-        'GatherDir',
+        [ 'GatherDir' => { 
+                include_dotfiles => $arg->{include_dotfiles} // 1
+            },
+        ],
         [ 'Test::Compile' => { skip => $arg->{test_compile_skip} } ],
         qw/ 
             MetaTests
