@@ -46,6 +46,8 @@ For L<Dist::Zilla::Plugin::GatherDir>. Defaults to I<1>.
 
 =cut
 
+use 5.10.0;
+
 use strict;
 
 use Moose;
