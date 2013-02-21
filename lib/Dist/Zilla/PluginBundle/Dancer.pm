@@ -27,6 +27,7 @@ their distributions. It's roughly equivalent to
     [MetaTests]
     [NoTabTests]
     [PodSyntaxTests]
+    [Test::ReportPrereqs]
 
     [PodWeaver]
 
@@ -71,6 +72,7 @@ use Dist::Zilla::Plugin::ModuleBuild;
 use Dist::Zilla::Plugin::MetaYAML;
 use Dist::Zilla::Plugin::MetaJSON;
 use Dist::Zilla::Plugin::Manifest;
+use Dist::Zilla::Plugin::Test::ReportPrereqs;
 
 with 'Dist::Zilla::Role::PluginBundle::Easy';
 
@@ -89,6 +91,7 @@ sub configure {
             NoTabsTests
             PodSyntaxTests
             ExtraTests
+            Test::ReportPrereqs
             PodWeaver
             PruneCruft
             ManifestSkip
