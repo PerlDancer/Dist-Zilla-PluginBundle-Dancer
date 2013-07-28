@@ -25,6 +25,10 @@ their distributions. It's roughly equivalent to
 
     [Authority]
 
+    [ContributorsFromGit]
+
+    [ContributorsFile]
+
     [Test::Compile]
     [MetaTests]
     [NoTabTests]
@@ -79,6 +83,8 @@ use Dist::Zilla::Plugin::MetaYAML;
 use Dist::Zilla::Plugin::MetaJSON;
 use Dist::Zilla::Plugin::Manifest;
 use Dist::Zilla::Plugin::Test::ReportPrereqs;
+use Dist::Zilla::Plugin::ContributorsFromGit;
+use Dist::Zilla::Plugin::ContributorsFile;
 use Dist::Zilla::Plugin::Authority;
 
 with 'Dist::Zilla::Role::PluginBundle::Easy';
@@ -111,6 +117,8 @@ sub configure {
         'PkgVersion',
         [ 'Authority' => { authority => $arg->{authority} } ],
         qw/
+            ContributorsFromGit
+            ContributorsFile
             License
             MakeMaker
             ModuleBuild
