@@ -23,6 +23,8 @@ their distributions. It's roughly equivalent to
 
     [PkgVersion]
 
+    [Authority]
+
     [Test::Compile]
     [MetaTests]
     [NoTabTests]
@@ -32,6 +34,11 @@ their distributions. It's roughly equivalent to
     [PodWeaver]
 
 =head2 ARGUMENTS
+
+=head3 authority
+
+For L<Dist::Zilla::Plugin::Authority>. If not given,
+L<Dist::Zilla::Plugin::Authority> will not be used.
 
 =head3 test_compile_skip
 
@@ -73,8 +80,16 @@ use Dist::Zilla::Plugin::MetaYAML;
 use Dist::Zilla::Plugin::MetaJSON;
 use Dist::Zilla::Plugin::Manifest;
 use Dist::Zilla::Plugin::Test::ReportPrereqs;
+use Dist::Zilla::Plugin::Authority;
 
 with 'Dist::Zilla::Role::PluginBundle::Easy';
+
+has authority => (
+    is      => 'ro',
+    isa     => 'Maybe[Str]',
+    lazy    => 1,
+    default => sub { $_[0]->payload->{authority} },
+);
 
 sub configure {
     my ( $self ) = @_;
@@ -102,6 +117,15 @@ sub configure {
         } ],
         'MetaProvides::Package',
         'PkgVersion',
+    );
+
+    if ( my $authority = $self->authority ) {
+        $self->add_plugins(
+            [ 'Authority' => { authority => $authority } ],
+        );
+    }
+
+    $self->add_plugins(
         qw/
             License
             MakeMaker
