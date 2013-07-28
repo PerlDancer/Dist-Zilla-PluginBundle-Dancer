@@ -37,6 +37,8 @@ their distributions. It's roughly equivalent to
 
     [PodWeaver]
 
+    [UploadToCPAN]
+
 =head2 ARGUMENTS
 
 =head3 authority
@@ -85,6 +87,7 @@ use Dist::Zilla::Plugin::Manifest;
 use Dist::Zilla::Plugin::Test::ReportPrereqs;
 use Dist::Zilla::Plugin::ContributorsFromGit;
 use Dist::Zilla::Plugin::ContributorsFile;
+use Dist::Zilla::Plugin::UploadToCPAN;
 use Dist::Zilla::Plugin::Authority;
 
 with 'Dist::Zilla::Role::PluginBundle::Easy';
@@ -125,6 +128,7 @@ sub configure {
             MetaYAML
             MetaJSON
             Manifest
+            UploadToCPAN
         /,
     );
 
