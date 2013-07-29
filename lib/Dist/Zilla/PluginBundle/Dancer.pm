@@ -23,6 +23,12 @@ their distributions. It's roughly equivalent to
 
     [PkgVersion]
 
+    [Authority]
+
+    [ContributorsFromGit]
+
+    [ContributorsFile]
+
     [Test::Compile]
     [MetaTests]
     [NoTabTests]
@@ -31,7 +37,13 @@ their distributions. It's roughly equivalent to
 
     [PodWeaver]
 
+    [UploadToCPAN]
+
 =head2 ARGUMENTS
+
+=head3 authority
+
+For L<Dist::Zilla::Plugin::Authority>.
 
 =head3 test_compile_skip
 
@@ -73,6 +85,10 @@ use Dist::Zilla::Plugin::MetaYAML;
 use Dist::Zilla::Plugin::MetaJSON;
 use Dist::Zilla::Plugin::Manifest;
 use Dist::Zilla::Plugin::Test::ReportPrereqs;
+use Dist::Zilla::Plugin::ContributorsFromGit;
+use Dist::Zilla::Plugin::ContributorsFile;
+use Dist::Zilla::Plugin::UploadToCPAN;
+use Dist::Zilla::Plugin::Authority;
 
 with 'Dist::Zilla::Role::PluginBundle::Easy';
 
@@ -102,13 +118,17 @@ sub configure {
         } ],
         'MetaProvides::Package',
         'PkgVersion',
+        [ 'Authority' => { authority => $arg->{authority} } ],
         qw/
+            ContributorsFromGit
+            ContributorsFile
             License
             MakeMaker
             ModuleBuild
             MetaYAML
             MetaJSON
             Manifest
+            UploadToCPAN
         /,
     );
 
