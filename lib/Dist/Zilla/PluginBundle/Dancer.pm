@@ -100,16 +100,37 @@ has authority => (
     default => sub { $_[0]->payload->{authority} },
 );
 
+has test_compile_skip => (
+    is => 'ro',
+    isa => 'ArrayRef[Str]',
+    lazy => 1,
+    default => sub {
+        return [ 
+            ( $_[0]->payload->{test_compile_skip} )
+                x !! $_[0]->payload->{test_compile_skip}
+        ];
+    },
+);
+
+has include_dotfiles => (
+    is => 'ro',
+    isa => 'Bool',
+    lazy => 1,
+    default => sub {
+        $_[0]->payload->{include_dotfiles} // 1;
+    },
+);
+
 sub configure {
     my ( $self ) = @_;
     my $arg = $self->payload;
 
     $self->add_plugins(
         [ 'GatherDir' => { 
-                include_dotfiles => $arg->{include_dotfiles} // 1
+                include_dotfiles => $self->include_dotfiles
             },
         ],
-        [ 'Test::Compile' => { skip => $arg->{test_compile_skip} } ],
+        [ 'Test::Compile' => { skip => $self->test_compile_skip } ],
         qw/ 
             MetaTests
             NoTabsTests
