@@ -25,8 +25,6 @@ their distributions. It's roughly equivalent to
 
     [Authority]
 
-    [ContributorsFile]
-
     [Test::Compile]
     [MetaTests]
     [NoTabTests]
@@ -84,7 +82,6 @@ use Dist::Zilla::Plugin::MetaYAML;
 use Dist::Zilla::Plugin::MetaJSON;
 use Dist::Zilla::Plugin::Manifest;
 use Dist::Zilla::Plugin::Test::ReportPrereqs;
-use Dist::Zilla::Plugin::ContributorsFile;
 use Dist::Zilla::Plugin::UploadToCPAN;
 use Dist::Zilla::Plugin::Authority;
 
@@ -154,7 +151,6 @@ sub configure {
 
     $self->add_plugins(
         qw/
-            ContributorsFile
             License
             MakeMaker
             ModuleBuild

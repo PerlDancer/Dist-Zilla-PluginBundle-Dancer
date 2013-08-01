@@ -3,6 +3,7 @@ Revision history for Dist-Zilla-PluginBundle-Dancer
 0.0006 2013-08-01
     - Temporary removed DZ::P::ContributorsFromGit as it makes Travis
         fails.
+    - And DZ::P::ContributorsFile, as it depends on DZ::P::CFG. :-(
 
 0.0005  2013-07-31
     - Add DZ::P::Authority
