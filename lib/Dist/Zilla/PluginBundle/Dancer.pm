@@ -25,8 +25,6 @@ their distributions. It's roughly equivalent to
 
     [Authority]
 
-    [ContributorsFromGit]
-
     [ContributorsFile]
 
     [Test::Compile]
@@ -86,7 +84,6 @@ use Dist::Zilla::Plugin::MetaYAML;
 use Dist::Zilla::Plugin::MetaJSON;
 use Dist::Zilla::Plugin::Manifest;
 use Dist::Zilla::Plugin::Test::ReportPrereqs;
-use Dist::Zilla::Plugin::ContributorsFromGit;
 use Dist::Zilla::Plugin::ContributorsFile;
 use Dist::Zilla::Plugin::UploadToCPAN;
 use Dist::Zilla::Plugin::Authority;
@@ -157,7 +154,6 @@ sub configure {
 
     $self->add_plugins(
         qw/
-            ContributorsFromGit
             ContributorsFile
             License
             MakeMaker
