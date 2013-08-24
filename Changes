@@ -1,5 +1,8 @@
 Revision history for Dist-Zilla-PluginBundle-Dancer
 
+{{$NEXT}}
+    - Bump dependency to Dist::Zilla::Plugin::TestCompile to 2.020.
+
 0.0006 2013-08-01
     - Temporary removed DZ::P::ContributorsFromGit as it makes Travis
         fails.

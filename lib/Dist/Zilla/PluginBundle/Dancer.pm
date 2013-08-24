@@ -63,7 +63,7 @@ use strict;
 use Moose;
 
 use Dist::Zilla::Plugin::GatherDir;
-use Dist::Zilla::Plugin::Test::Compile 2.011;
+use Dist::Zilla::Plugin::Test::Compile 2.020;
 use Dist::Zilla::Plugin::MetaTests;
 use Dist::Zilla::Plugin::NoTabsTests;
 use Dist::Zilla::Plugin::PodSyntaxTests;
