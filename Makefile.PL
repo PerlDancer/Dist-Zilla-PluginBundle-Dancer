@@ -12,13 +12,14 @@ my %WriteMakefileArgs = (
   "ABSTRACT" => "dzil plugins used by Dancer projects",
   "AUTHOR" => "Yanick Champoux <yanick\@cpan.org>",
   "BUILD_REQUIRES" => {
-    "Capture::Tiny" => 0,
     "ExtUtils::MakeMaker" => 0,
+    "File::Spec" => 0,
     "File::Spec::Functions" => 0,
+    "IO::Handle" => 0,
+    "IPC::Open3" => 0,
     "List::Util" => 0,
     "Module::Build" => "0.3601",
     "Test::More" => "0.88",
-    "blib" => 0,
     "warnings" => 0
   },
   "CONFIGURE_REQUIRES" => {
@@ -32,8 +33,6 @@ my %WriteMakefileArgs = (
   "PREREQ_PM" => {
     "Dist::Zilla::Plugin::Authority" => 0,
     "Dist::Zilla::Plugin::AutoPrereqs" => 0,
-    "Dist::Zilla::Plugin::ContributorsFile" => 0,
-    "Dist::Zilla::Plugin::ContributorsFromGit" => 0,
     "Dist::Zilla::Plugin::ExecDir" => 0,
     "Dist::Zilla::Plugin::ExtraTests" => 0,
     "Dist::Zilla::Plugin::GatherDir" => 0,
@@ -58,7 +57,7 @@ my %WriteMakefileArgs = (
     "Moose" => 0,
     "strict" => 0
   },
-  "VERSION" => "0.0005",
+  "VERSION" => "0.0006",
   "test" => {
     "TESTS" => "t/*.t"
   }

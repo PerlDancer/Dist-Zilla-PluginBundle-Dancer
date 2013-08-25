@@ -7,13 +7,14 @@ use Module::Build 0.3601;
 
 my %module_build_args = (
   "build_requires" => {
-    "Capture::Tiny" => 0,
     "ExtUtils::MakeMaker" => 0,
+    "File::Spec" => 0,
     "File::Spec::Functions" => 0,
+    "IO::Handle" => 0,
+    "IPC::Open3" => 0,
     "List::Util" => 0,
     "Module::Build" => "0.3601",
     "Test::More" => "0.88",
-    "blib" => 0,
     "warnings" => 0
   },
   "configure_requires" => {
@@ -25,7 +26,7 @@ my %module_build_args = (
     "Yanick Champoux <yanick\@cpan.org>"
   ],
   "dist_name" => "Dist-Zilla-PluginBundle-Dancer",
-  "dist_version" => "0.0005",
+  "dist_version" => "0.0006",
   "license" => "perl",
   "module_name" => "Dist::Zilla::PluginBundle::Dancer",
   "recommends" => {},
@@ -33,8 +34,6 @@ my %module_build_args = (
   "requires" => {
     "Dist::Zilla::Plugin::Authority" => 0,
     "Dist::Zilla::Plugin::AutoPrereqs" => 0,
-    "Dist::Zilla::Plugin::ContributorsFile" => 0,
-    "Dist::Zilla::Plugin::ContributorsFromGit" => 0,
     "Dist::Zilla::Plugin::ExecDir" => 0,
     "Dist::Zilla::Plugin::ExtraTests" => 0,
     "Dist::Zilla::Plugin::GatherDir" => 0,

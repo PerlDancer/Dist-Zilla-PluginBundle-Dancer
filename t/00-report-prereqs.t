@@ -10,42 +10,7 @@ use File::Spec::Functions;
 use List::Util qw/max/;
 
 my @modules = qw(
-  Capture::Tiny
-  Dist::Zilla::Plugin::Authority
-  Dist::Zilla::Plugin::AutoPrereqs
-  Dist::Zilla::Plugin::ContributorsFile
-  Dist::Zilla::Plugin::ContributorsFromGit
-  Dist::Zilla::Plugin::ExecDir
-  Dist::Zilla::Plugin::ExtraTests
-  Dist::Zilla::Plugin::GatherDir
-  Dist::Zilla::Plugin::License
-  Dist::Zilla::Plugin::MakeMaker
-  Dist::Zilla::Plugin::Manifest
-  Dist::Zilla::Plugin::ManifestSkip
-  Dist::Zilla::Plugin::MetaJSON
-  Dist::Zilla::Plugin::MetaProvides::Package
-  Dist::Zilla::Plugin::MetaTests
-  Dist::Zilla::Plugin::MetaYAML
-  Dist::Zilla::Plugin::ModuleBuild
-  Dist::Zilla::Plugin::NoTabsTests
-  Dist::Zilla::Plugin::PkgVersion
-  Dist::Zilla::Plugin::PodSyntaxTests
-  Dist::Zilla::Plugin::PodWeaver
-  Dist::Zilla::Plugin::PruneCruft
-  Dist::Zilla::Plugin::Test::Compile
-  Dist::Zilla::Plugin::Test::ReportPrereqs
-  Dist::Zilla::Plugin::UploadToCPAN
-  Dist::Zilla::Role::PluginBundle::Easy
-  ExtUtils::MakeMaker
-  File::Spec::Functions
-  List::Util
-  Module::Build
-  Moose
-  Test::More
-  blib
-  perl
-  strict
-  warnings
+INSERT_MODULE_LIST_HERE
 );
 
 # replace modules with dynamic results from MYMETA.json if we can
