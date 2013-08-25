@@ -1,7 +1,0 @@
-/Dist-Zilla-PluginBundle-Dancer*
-.build
-blib
-_build
-MYMETA.json
-MYMETA.yml
-Build
