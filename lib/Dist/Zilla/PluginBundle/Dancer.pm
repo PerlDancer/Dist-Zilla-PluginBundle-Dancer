@@ -1,60 +1,10 @@
 package Dist::Zilla::PluginBundle::Dancer;
-
+BEGIN {
+  $Dist::Zilla::PluginBundle::Dancer::AUTHORITY = 'cpan:YANICK';
+}
+$Dist::Zilla::PluginBundle::Dancer::VERSION = '0.0010';
 # ABSTRACT: dzil plugins used by Dancer projects
 
-=head1 DESCRIPTION
-
-This is the plugin bundle that the core L<Dancer> crew use to release
-their distributions. It's roughly equivalent to
-
-    [GatherDir]
-    [PruneCruft]
-    [ManifestSkip]
-    [ExecDir]
-
-    [AutoPrereqs]
-    [MetaProvides::Package]
-    [License]
-    [MakeMaker]
-    [ModuleBuild]
-    [MetaYAML]
-    [MetaJSON]
-    [Manifest]
-
-    [PkgVersion]
-
-    [Authority]
-
-    [Test::Compile]
-    [MetaTests]
-    [NoTabTests]
-    [PodSyntaxTests]
-    [Test::ReportPrereqs]
-
-    [PodWeaver]
-
-    [UploadToCPAN]
-
-=head2 ARGUMENTS
-
-=head3 authority
-
-For L<Dist::Zilla::Plugin::Authority>. If not given,
-L<Dist::Zilla::Plugin::Authority> will not be used.
-
-=head3 test_compile_skip
-
-I<skip> option for L<Dist::Zilla::Plugin::Test::Compile>.
-
-=head3 autoprereqs_skip
-
-I<skip> option for L<Dist::Zilla::Plugin::AutoPrereqs>.
-
-=head3 include_dotfiles
-
-For L<Dist::Zilla::Plugin::GatherDir>. Defaults to I<1>.
-
-=cut
 
 use 5.10.0;
 
@@ -139,3 +89,80 @@ sub configure {
 }
 
 1;
+
+__END__
+
+=pod
+
+=head1 NAME
+
+Dist::Zilla::PluginBundle::Dancer - dzil plugins used by Dancer projects
+
+=head1 VERSION
+
+version 0.0010
+
+=head1 DESCRIPTION
+
+This is the plugin bundle that the core L<Dancer> crew use to release
+their distributions. It's roughly equivalent to
+
+    [GatherDir]
+    [PruneCruft]
+    [ManifestSkip]
+    [ExecDir]
+
+    [AutoPrereqs]
+    [MetaProvides::Package]
+    [License]
+    [MakeMaker]
+    [ModuleBuild]
+    [MetaYAML]
+    [MetaJSON]
+    [Manifest]
+
+    [PkgVersion]
+
+    [Authority]
+
+    [Test::Compile]
+    [MetaTests]
+    [NoTabTests]
+    [PodSyntaxTests]
+    [Test::ReportPrereqs]
+
+    [PodWeaver]
+
+    [UploadToCPAN]
+
+=head2 ARGUMENTS
+
+=head3 authority
+
+For L<Dist::Zilla::Plugin::Authority>. If not given,
+L<Dist::Zilla::Plugin::Authority> will not be used.
+
+=head3 test_compile_skip
+
+I<skip> option for L<Dist::Zilla::Plugin::Test::Compile>.
+
+=head3 autoprereqs_skip
+
+I<skip> option for L<Dist::Zilla::Plugin::AutoPrereqs>.
+
+=head3 include_dotfiles
+
+For L<Dist::Zilla::Plugin::GatherDir>. Defaults to I<1>.
+
+=head1 AUTHOR
+
+Yanick Champoux <yanick@cpan.org>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2012 by Yanick Champoux.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=cut
