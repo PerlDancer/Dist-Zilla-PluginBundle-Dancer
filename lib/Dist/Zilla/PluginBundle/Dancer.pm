@@ -60,6 +60,8 @@ use 5.10.0;
 
 use strict;
 
+use PerlX::Maybe;
+
 use Moose;
 
 with 'Dist::Zilla::Role::PluginBundle::Easy';
@@ -71,17 +73,9 @@ has authority => (
     default => sub { $_[0]->payload->{authority} },
 );
 
-has test_compile_skip => (
-    is => 'ro',
-    isa => 'ArrayRef[Str]',
-    lazy => 1,
-    default => sub {
-        return [ 
-            ( $_[0]->payload->{test_compile_skip} )
-                x !! $_[0]->payload->{test_compile_skip}
-        ];
-    },
-);
+sub test_compile_skip {
+        return maybe skip => $_[0]->payload->{test_compile_skip}; 
+};
 
 has include_dotfiles => (
     is => 'ro',
