@@ -62,29 +62,6 @@ use strict;
 
 use Moose;
 
-use Dist::Zilla::Plugin::GatherDir;
-use Dist::Zilla::Plugin::Test::Compile 2.039;
-use Dist::Zilla::Plugin::MetaTests;
-use Dist::Zilla::Plugin::NoTabsTests;
-use Dist::Zilla::Plugin::PodSyntaxTests;
-use Dist::Zilla::Plugin::ExtraTests;
-use Dist::Zilla::Plugin::PodWeaver;
-use Dist::Zilla::Plugin::PruneCruft;
-use Dist::Zilla::Plugin::ManifestSkip;
-use Dist::Zilla::Plugin::ExecDir;
-use Dist::Zilla::Plugin::AutoPrereqs;
-use Dist::Zilla::Plugin::PkgVersion;
-use Dist::Zilla::Plugin::MetaProvides::Package;
-use Dist::Zilla::Plugin::License;
-use Dist::Zilla::Plugin::MakeMaker;
-use Dist::Zilla::Plugin::ModuleBuild;
-use Dist::Zilla::Plugin::MetaYAML;
-use Dist::Zilla::Plugin::MetaJSON;
-use Dist::Zilla::Plugin::Manifest;
-use Dist::Zilla::Plugin::Test::ReportPrereqs;
-use Dist::Zilla::Plugin::UploadToCPAN;
-use Dist::Zilla::Plugin::Authority;
-
 with 'Dist::Zilla::Role::PluginBundle::Easy';
 
 has authority => (
@@ -124,7 +101,10 @@ sub configure {
                 include_dotfiles => $self->include_dotfiles
             },
         ],
-        [ 'Test::Compile' => { skip => $self->test_compile_skip } ],
+        [ 'Test::Compile' => { 
+                skip => $self->test_compile_skip,
+                ':version' => '2.039',
+            } ],
         qw/ 
             MetaTests
             NoTabsTests
