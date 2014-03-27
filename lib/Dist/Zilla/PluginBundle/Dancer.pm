@@ -96,7 +96,7 @@ sub configure {
             },
         ],
         [ 'Test::Compile' => { 
-                skip => $self->test_compile_skip,
+                $self->test_compile_skip,
                 ':version' => '2.039',
             } ],
         qw/ 
