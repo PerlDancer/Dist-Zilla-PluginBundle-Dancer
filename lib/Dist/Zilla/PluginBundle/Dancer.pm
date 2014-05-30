@@ -19,6 +19,11 @@ their distributions. It's roughly equivalent to
     [ModuleBuild]
     [MetaYAML]
     [MetaJSON]
+
+    [GithubMeta]
+    issues = 1
+    remote = <git_remote>
+
     [Manifest]
 
     [PkgVersion]
@@ -54,6 +59,11 @@ I<skip> option for L<Dist::Zilla::Plugin::AutoPrereqs>.
 
 For L<Dist::Zilla::Plugin::GatherDir>. Defaults to I<1>.
 
+=head3 git_remote
+
+For the C<remote> argument of L<Dist::Zilla::Plugin::GithubMeta>. Defaults to
+'origin'.
+
 =cut
 
 use 5.10.0;
@@ -71,6 +81,13 @@ has authority => (
     isa     => 'Maybe[Str]',
     lazy    => 1,
     default => sub { $_[0]->payload->{authority} },
+);
+
+has git_remote => (
+    isa => 'Str',
+    is => 'ro',
+    lazy => 1,
+    default => sub { $_[0]->payload->{git_remote} || 'origin' },
 );
 
 sub test_compile_skip {
@@ -130,6 +147,9 @@ sub configure {
             ModuleBuild
             MetaYAML
             MetaJSON
+            /,
+        [ 'GithubMeta' => { issues => 1, remote => $self->git_remote } ], 
+        qw/
             Manifest
             UploadToCPAN
         /,
