@@ -27,7 +27,7 @@ their distributions. It's roughly equivalent to
 
     [Test::Compile]
     [MetaTests]
-    [NoTabTests]
+    [Test::NoTabs]
     [PodSyntaxTests]
     [Test::ReportPrereqs]
 
@@ -101,7 +101,7 @@ sub configure {
             } ],
         qw/ 
             MetaTests
-            NoTabsTests
+            Test::NoTabs
             PodSyntaxTests
             ExtraTests
             Test::ReportPrereqs
