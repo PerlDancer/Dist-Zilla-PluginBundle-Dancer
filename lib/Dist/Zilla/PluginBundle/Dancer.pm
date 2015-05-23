@@ -16,7 +16,6 @@ their distributions. It's roughly equivalent to
     [MetaProvides::Package]
     [License]
     [MakeMaker]
-    [ModuleBuild]
     [MetaYAML]
     [MetaJSON]
 
@@ -144,7 +143,6 @@ sub configure {
         qw/
             License
             MakeMaker
-            ModuleBuild
             MetaYAML
             MetaJSON
             /,
