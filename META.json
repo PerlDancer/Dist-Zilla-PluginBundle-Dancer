@@ -4,7 +4,7 @@
       "Yanick Champoux <yanick@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 5.016, CPAN::Meta::Converter version 2.140640",
+   "generated_by" : "Dist::Zilla version 5.034, CPAN::Meta::Converter version 2.142690",
    "license" : [
       "perl_5"
    ],
@@ -14,15 +14,9 @@
    },
    "name" : "Dist-Zilla-PluginBundle-Dancer",
    "prereqs" : {
-      "build" : {
-         "requires" : {
-            "Module::Build" : "0.3601"
-         }
-      },
       "configure" : {
          "requires" : {
-            "ExtUtils::MakeMaker" : "6.30",
-            "Module::Build" : "0.3601"
+            "ExtUtils::MakeMaker" : "0"
          }
       },
       "develop" : {
@@ -50,7 +44,6 @@
             "Dist::Zilla::Plugin::MetaProvides::Package" : "0",
             "Dist::Zilla::Plugin::MetaTests" : "0",
             "Dist::Zilla::Plugin::MetaYAML" : "0",
-            "Dist::Zilla::Plugin::ModuleBuild" : "0",
             "Dist::Zilla::Plugin::PkgVersion" : "0",
             "Dist::Zilla::Plugin::PodSyntaxTests" : "0",
             "Dist::Zilla::Plugin::PodWeaver" : "0",
@@ -68,18 +61,14 @@
       },
       "test" : {
          "recommends" : {
-            "CPAN::Meta" : "0",
-            "CPAN::Meta::Requirements" : "2.120900"
+            "CPAN::Meta" : "2.120900"
          },
          "requires" : {
             "ExtUtils::MakeMaker" : "0",
             "File::Spec" : "0",
-            "File::Spec::Functions" : "0",
             "IO::Handle" : "0",
             "IPC::Open3" : "0",
-            "List::Util" : "0",
             "Test::More" : "0",
-            "version" : "0",
             "warnings" : "0"
          }
       }
@@ -87,7 +76,7 @@
    "provides" : {
       "Dist::Zilla::PluginBundle::Dancer" : {
          "file" : "lib/Dist/Zilla/PluginBundle/Dancer.pm",
-         "version" : "0.0012"
+         "version" : "0.0013"
       }
    },
    "release_status" : "stable",
@@ -102,7 +91,7 @@
          "web" : "https://github.com/PerlDancer/Dist-Zilla-PluginBundle-Dancer"
       }
    },
-   "version" : "0.0012",
+   "version" : "0.0013",
    "x_authority" : "cpan:YANICK"
 }
 

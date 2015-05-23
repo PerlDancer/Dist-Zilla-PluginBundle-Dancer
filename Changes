@@ -1,5 +1,10 @@
 Revision history for Dist-Zilla-PluginBundle-Dancer
 
+0.0013 2015-05-23
+
+ [DISTRIBUTION]
+ - Remove Module::Build support. (GH#13)
+
 0.0012 2014-05-29
 
  [DISTRIBUTION]

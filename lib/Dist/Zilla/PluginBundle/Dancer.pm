@@ -2,7 +2,7 @@ package Dist::Zilla::PluginBundle::Dancer;
 BEGIN {
   $Dist::Zilla::PluginBundle::Dancer::AUTHORITY = 'cpan:YANICK';
 }
-$Dist::Zilla::PluginBundle::Dancer::VERSION = '0.0012';
+$Dist::Zilla::PluginBundle::Dancer::VERSION = '0.0013';
 # ABSTRACT: dzil plugins used by Dancer projects
 
 
@@ -84,7 +84,6 @@ sub configure {
         qw/
             License
             MakeMaker
-            ModuleBuild
             MetaYAML
             MetaJSON
             /,
@@ -112,7 +111,7 @@ Dist::Zilla::PluginBundle::Dancer - dzil plugins used by Dancer projects
 
 =head1 VERSION
 
-version 0.0012
+version 0.0013
 
 =head1 DESCRIPTION
 
@@ -128,7 +127,6 @@ their distributions. It's roughly equivalent to
     [MetaProvides::Package]
     [License]
     [MakeMaker]
-    [ModuleBuild]
     [MetaYAML]
     [MetaJSON]
 
